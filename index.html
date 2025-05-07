@@ -1,12 +1,14 @@
+<!-- Enhanced Portfolio with Animation + Logo + Repo Links -->
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Adrian Hadi Permana - Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="icon" href="https://avatars.githubusercontent.com/u/1?v=4" type="image/png" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
   <style>
     :root {
       --primary: #1e40af;
@@ -41,6 +43,13 @@
       margin: 0;
       font-size: 3rem;
     }
+    header img {
+      border-radius: 50%;
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
     header p {
       font-size: 1.25rem;
       margin-top: 0.5rem;
@@ -67,10 +76,10 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.05);
       padding: 1rem;
       margin-bottom: 1rem;
-      transition: transform 0.2s;
+      transition: transform 0.3s;
     }
     li:hover {
-      transform: translateY(-2px);
+      transform: translateY(-4px);
     }
     [data-theme="dark"] li {
       background: #1e293b;
@@ -124,21 +133,23 @@
 <body>
   <button class="toggle-btn" onclick="toggleTheme()">🌓 Toggle Theme</button>
 
-  <header>
+  <header data-aos="zoom-in">
+    <img src="https://avatars.githubusercontent.com/u/1?v=4" alt="Adrian Logo" />
     <h1>Adrian Hadi Permana</h1>
     <p>Backend & Full Stack Developer</p>
     <p>
       <a href="mailto:adrianhadi@outlook.com" style="color:white;">📧 Email</a> |
-      <a href="https://linkedin.com/in/adrianhadipermana" target="_blank" style="color:white;">🔗 LinkedIn</a>
+      <a href="https://linkedin.com/in/adrianhadipermana" target="_blank" style="color:white;">🔗 LinkedIn</a> |
+      <a href="https://github.com/adrianhadipermana" target="_blank" style="color:white;">💻 GitHub</a>
     </p>
   </header>
 
-  <section>
+  <section data-aos="fade-up">
     <h2>About Me</h2>
     <p>Mobile and Full Stack Developer with 4+ years of experience building HR, GIS, and financial systems. Skilled in Java, Flutter, and Node.js. I enjoy turning complex problems into simple and efficient solutions.</p>
   </section>
 
-  <section>
+  <section data-aos="fade-up">
     <h2>Skills</h2>
     <ul>
       <li><strong>Languages:</strong><div class="tags"><span class="tag">Java</span><span class="tag">JavaScript</span><span class="tag">SQL</span></div></li>
@@ -148,7 +159,7 @@
     </ul>
   </section>
 
-  <section>
+  <section data-aos="fade-up">
     <h2>Experience</h2>
     <ul>
       <li><strong>PT. NTT Data Indonesia (via Bee Solution Partners)</strong><br/><em>Full Stack Developer | Aug 2019 – Present</em><br/>Developed HRZERO (Java/Flutter), facial recognition system, REST APIs, tax/batch modules and handled deployment on Play Console.</li>
@@ -158,7 +169,7 @@
     </ul>
   </section>
 
-  <section>
+  <section data-aos="fade-up">
     <h2>Education</h2>
     <ul>
       <li><strong>Universitas Komputer Indonesia</strong> – B.Sc Information Systems (2023 – Present)</li>
@@ -166,13 +177,13 @@
     </ul>
   </section>
 
-  <section>
+  <section data-aos="fade-up">
     <h2>Featured Projects</h2>
     <ul>
-      <li><strong>hrzero-backend</strong> – REST backend with Spring Boot + PostgreSQL for HR/tax app</li>
-      <li><strong>faceing-mobile</strong> – Flutter app with facial recognition & Anura API integration</li>
-      <li><strong>gis-processor</strong> – Node.js GIS backend with SHP file parsing and sync</li>
-      <li><strong>bank-queue-sync</strong> – Queue management system with local/cloud mode</li>
+      <li><strong><a href="https://github.com/adrianhadipermana/hrzero-backend" target="_blank">hrzero-backend</a></strong> – REST backend with Spring Boot + PostgreSQL for HR/tax app</li>
+      <li><strong><a href="https://github.com/adrianhadipermana/faceing-mobile" target="_blank">faceing-mobile</a></strong> – Flutter app with facial recognition & Anura API integration</li>
+      <li><strong><a href="https://github.com/adrianhadipermana/gis-processor" target="_blank">gis-processor</a></strong> – Node.js GIS backend with SHP file parsing and sync</li>
+      <li><strong><a href="https://github.com/adrianhadipermana/bank-queue-sync" target="_blank">bank-queue-sync</a></strong> – Queue management system with local/cloud mode</li>
     </ul>
   </section>
 
@@ -186,6 +197,10 @@
       const current = html.getAttribute('data-theme');
       html.setAttribute('data-theme', current === 'dark' ? 'light' : 'dark');
     }
+  </script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
   </script>
 </body>
 </html>
