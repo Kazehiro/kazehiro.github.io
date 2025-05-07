@@ -1,117 +1,167 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Adrian Hadi Permana - Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="https://avatars.githubusercontent.com/u/1?v=4" type="image/png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
+    :root {
+      --primary: #1e40af;
+      --accent: #2563eb;
+      --bg: #f9fafb;
+      --text: #1f2937;
+      --muted: #6b7280;
+    }
+    [data-theme="dark"] {
+      --primary: #3b82f6;
+      --accent: #60a5fa;
+      --bg: #0f172a;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+    }
+    * { box-sizing: border-box; }
     body {
       font-family: 'Inter', sans-serif;
       margin: 0;
-      background: #f9fafb;
-      color: #1f2937;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      transition: background 0.3s, color 0.3s;
     }
     header {
-      background: #1e40af;
+      background: linear-gradient(to right, var(--primary), var(--accent));
       color: white;
-      padding: 2rem;
+      padding: 3rem 1rem;
       text-align: center;
     }
     header h1 {
       margin: 0;
-      font-size: 2.5rem;
+      font-size: 3rem;
     }
     header p {
-      font-size: 1.2rem;
+      font-size: 1.25rem;
       margin-top: 0.5rem;
     }
     section {
-      max-width: 800px;
+      max-width: 900px;
       margin: 2rem auto;
-      padding: 1rem;
+      padding: 0 1rem;
     }
     h2 {
-      border-bottom: 2px solid #e5e7eb;
-      padding-bottom: 0.5rem;
+      font-size: 1.75rem;
       margin-bottom: 1rem;
-      color: #1e40af;
+      color: var(--primary);
+      border-left: 5px solid var(--accent);
+      padding-left: 0.5rem;
     }
     ul {
       list-style: none;
       padding-left: 0;
     }
     li {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      padding: 1rem;
       margin-bottom: 1rem;
+      transition: transform 0.2s;
+    }
+    li:hover {
+      transform: translateY(-2px);
+    }
+    [data-theme="dark"] li {
+      background: #1e293b;
     }
     .footer {
       text-align: center;
       margin: 3rem 0 1rem;
       font-size: 0.9rem;
-      color: #6b7280;
+      color: var(--muted);
     }
     a {
-      color: #2563eb;
+      color: var(--accent);
       text-decoration: none;
     }
     a:hover {
       text-decoration: underline;
     }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+    .tag {
+      background-color: #e0f2fe;
+      color: #0369a1;
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.25rem;
+      font-size: 0.75rem;
+    }
+    [data-theme="dark"] .tag {
+      background-color: #334155;
+      color: #93c5fd;
+    }
+    .toggle-btn {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background: var(--accent);
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      z-index: 1000;
+      font-size: 0.9rem;
+    }
   </style>
 </head>
 <body>
+  <button class="toggle-btn" onclick="toggleTheme()">🌓 Toggle Theme</button>
+
   <header>
     <h1>Adrian Hadi Permana</h1>
     <p>Backend & Full Stack Developer</p>
-    <p><a href="mailto:adrianhadi@outlook.com">adrianhadi@outlook.com</a> | <a href="https://linkedin.com/in/adrianhadipermana" target="_blank">LinkedIn</a></p>
+    <p>
+      <a href="mailto:adrianhadi@outlook.com" style="color:white;">📧 Email</a> |
+      <a href="https://linkedin.com/in/adrianhadipermana" target="_blank" style="color:white;">🔗 LinkedIn</a>
+    </p>
   </header>
 
   <section>
     <h2>About Me</h2>
-    <p>Mobile and Full Stack Developer with over 4 years of experience building scalable HR, GIS, and financial applications using Java, Flutter, and Node.js. Passionate about clean code, backend architecture, and solving complex problems.</p>
+    <p>Mobile and Full Stack Developer with 4+ years of experience building HR, GIS, and financial systems. Skilled in Java, Flutter, and Node.js. I enjoy turning complex problems into simple and efficient solutions.</p>
   </section>
 
   <section>
     <h2>Skills</h2>
     <ul>
-      <li><strong>Languages:</strong> Java, JavaScript, SQL</li>
-      <li><strong>Frameworks:</strong> Flutter (Bloc, GetX), Spring Boot, Spring MVC, Node.js</li>
-      <li><strong>Databases:</strong> PostgreSQL, MariaDB, MySQL, Firebase</li>
-      <li><strong>Tools:</strong> Git, Linux, Play Console, LINT</li>
-      <li><strong>Practices:</strong> MVVM, MVC, REST API, Unit Testing, CI/CD, Server Deployment</li>
+      <li><strong>Languages:</strong><div class="tags"><span class="tag">Java</span><span class="tag">JavaScript</span><span class="tag">SQL</span></div></li>
+      <li><strong>Frameworks:</strong><div class="tags"><span class="tag">Spring Boot</span><span class="tag">Spring MVC</span><span class="tag">Flutter (Bloc/GetX)</span><span class="tag">Node.js</span></div></li>
+      <li><strong>Databases:</strong><div class="tags"><span class="tag">PostgreSQL</span><span class="tag">MariaDB</span><span class="tag">MySQL</span><span class="tag">Firebase</span></div></li>
+      <li><strong>Other:</strong><div class="tags"><span class="tag">REST API</span><span class="tag">Unit Testing</span><span class="tag">CI/CD</span><span class="tag">SHP File Processing</span><span class="tag">Salary & Tax (PPH21)</span></div></li>
     </ul>
   </section>
 
   <section>
     <h2>Experience</h2>
     <ul>
-      <li>
-        <strong>PT. NTT Data Indonesia</strong> (Full Stack Developer)<br/>
-        <em>Aug 2019 – Present</em><br/>
-        Developed HR and facial recognition apps, REST APIs, tax modules, and integrated with Play Console.
-      </li>
-      <li>
-        <strong>Alpha Cipta Teknologi</strong> (Freelance)<br/>
-        <em>Aug 2023 – Present</em><br/>
-        Built GIS and banking queue backend systems with local/cloud sync.
-      </li>
-      <li>
-        <strong>Fagca.JP</strong> (Frontend Developer)<br/>
-        <em>Jan – May 2021</em><br/>
-        Created WordPress-based landing pages using PHP and CSS.
-      </li>
-      <li>
-        <strong>CV. Insan Broadband Media</strong> (Intern)<br/>
-        <em>Sep – Dec 2018</em><br/>
-        Developed full-stack Java mobile apps with Firebase integration.
-      </li>
+      <li><strong>PT. NTT Data Indonesia (via Bee Solution Partners)</strong><br/><em>Full Stack Developer | Aug 2019 – Present</em><br/>Developed HRZERO (Java/Flutter), facial recognition system, REST APIs, tax/batch modules and handled deployment on Play Console.</li>
+      <li><strong>Alpha Cipta Teknologi</strong><br/><em>Freelance | Aug 2023 – Present</em><br/>Developed backend systems for GIS and banking queue with SHP processing and cloud sync.</li>
+      <li><strong>Fagca. JP</strong><br/><em>Frontend Developer | Jan – May 2021</em><br/>Created PHP/CSS WordPress landing pages for multiple products.</li>
+      <li><strong>CV. Insan Broadband Media</strong><br/><em>Mobile Developer Intern | Sep – Dec 2018</em><br/>Developed Shafood & Tarq Mengaji Android apps using Java/XML + Firebase.</li>
     </ul>
   </section>
 
   <section>
     <h2>Education</h2>
     <ul>
-      <li><strong>Universitas Komputer Indonesia</strong> – Bachelor's in Information Systems (2023 – Present)</li>
+      <li><strong>Universitas Komputer Indonesia</strong> – B.Sc Information Systems (2023 – Present)</li>
       <li><strong>SMKN 4 Bandung</strong> – Vocational in Software Engineering (2017 – 2019)</li>
     </ul>
   </section>
@@ -119,15 +169,23 @@
   <section>
     <h2>Featured Projects</h2>
     <ul>
-      <li><strong>hrzero-backend</strong> – RESTful backend for HR apps with salary/tax logic</li>
-      <li><strong>faceing-mobile</strong> – Flutter + GetX facial recognition attendance app</li>
-      <li><strong>gis-processor</strong> – Node.js backend for SHP file parsing and mapping</li>
-      <li><strong>bank-queue-sync</strong> – Local/cloud queue system backend</li>
+      <li><strong>hrzero-backend</strong> – REST backend with Spring Boot + PostgreSQL for HR/tax app</li>
+      <li><strong>faceing-mobile</strong> – Flutter app with facial recognition & Anura API integration</li>
+      <li><strong>gis-processor</strong> – Node.js GIS backend with SHP file parsing and sync</li>
+      <li><strong>bank-queue-sync</strong> – Queue management system with local/cloud mode</li>
     </ul>
   </section>
 
   <div class="footer">
-    &copy; 2025 Adrian Hadi Permana
+    &copy; 2025 Adrian Hadi Permana — Made with ❤️
   </div>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const current = html.getAttribute('data-theme');
+      html.setAttribute('data-theme', current === 'dark' ? 'light' : 'dark');
+    }
+  </script>
 </body>
 </html>
