@@ -1,47 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio - Adrian Hadi Permana</title>
-    <link rel="stylesheet" href="test.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adrian Hadi Permana - Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      background: #f9fafb;
+      color: #1f2937;
+    }
+    header {
+      background: #1e40af;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
+    section {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+    h2 {
+      border-bottom: 2px solid #e5e7eb;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+      color: #1e40af;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    li {
+      margin-bottom: 1rem;
+    }
+    .footer {
+      text-align: center;
+      margin: 3rem 0 1rem;
+      font-size: 0.9rem;
+      color: #6b7280;
+    }
+    a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-    <section id="home">
-        <h1>Welcome to My Portfolio</h1>
-        <p>Hello! I'm Adrian Permana, a passionate Software Developer with 4 years of programming experience on JAVA Language.</p>
-    </section>
+  <header>
+    <h1>Adrian Hadi Permana</h1>
+    <p>Backend & Full Stack Developer</p>
+    <p><a href="mailto:adrianhadi@outlook.com">adrianhadi@outlook.com</a> | <a href="https://linkedin.com/in/adrianhadipermana" target="_blank">LinkedIn</a></p>
+  </header>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>I have a passion for software development and have successfully created an HR and Payroll application.</p>
-    </section>
+  <section>
+    <h2>About Me</h2>
+    <p>Mobile and Full Stack Developer with over 4 years of experience building scalable HR, GIS, and financial applications using Java, Flutter, and Node.js. Passionate about clean code, backend architecture, and solving complex problems.</p>
+  </section>
 
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project">
-            <h3>HR and Payroll Application</h3>
-            <p>A comprehensive solution for managing HR and payroll processes.</p>
-            <h3>Queue Manager</h3>
-            <p>A comprehensive solution for managing Queue in your business.</p>
-            <h3>GIS Application</h3>
-            <p>A comprehensive solution for managing your GIS Project.</p>
-        </div>
-    </section>
+  <section>
+    <h2>Skills</h2>
+    <ul>
+      <li><strong>Languages:</strong> Java, JavaScript, SQL</li>
+      <li><strong>Frameworks:</strong> Flutter (Bloc, GetX), Spring Boot, Spring MVC, Node.js</li>
+      <li><strong>Databases:</strong> PostgreSQL, MariaDB, MySQL, Firebase</li>
+      <li><strong>Tools:</strong> Git, Linux, Play Console, LINT</li>
+      <li><strong>Practices:</strong> MVVM, MVC, REST API, Unit Testing, CI/CD, Server Deployment</li>
+    </ul>
+  </section>
 
-    <section id="skills">
-        <h2>Skills</h2>
-        <ul>
-            <li>Programming Languages: Java, Dart, Javascript, Typescript, Kotlin</li>
-            <li>Frameworks and Libraries: Spring, Flutter, Node JS, Next JS</li>
-        </ul>
-    </section>
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: Adrianhadi@outlook.com</p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/jack-of-all-trades-master-of-none/"> Adrian Permana </a></p>
-        <!-- Add more contact details as needed -->
-    </section>
+  <section>
+    <h2>Experience</h2>
+    <ul>
+      <li>
+        <strong>PT. NTT Data Indonesia</strong> (Full Stack Developer)<br/>
+        <em>Aug 2019 – Present</em><br/>
+        Developed HR and facial recognition apps, REST APIs, tax modules, and integrated with Play Console.
+      </li>
+      <li>
+        <strong>Alpha Cipta Teknologi</strong> (Freelance)<br/>
+        <em>Aug 2023 – Present</em><br/>
+        Built GIS and banking queue backend systems with local/cloud sync.
+      </li>
+      <li>
+        <strong>Fagca.JP</strong> (Frontend Developer)<br/>
+        <em>Jan – May 2021</em><br/>
+        Created WordPress-based landing pages using PHP and CSS.
+      </li>
+      <li>
+        <strong>CV. Insan Broadband Media</strong> (Intern)<br/>
+        <em>Sep – Dec 2018</em><br/>
+        Developed full-stack Java mobile apps with Firebase integration.
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    <ul>
+      <li><strong>Universitas Komputer Indonesia</strong> – Bachelor's in Information Systems (2023 – Present)</li>
+      <li><strong>SMKN 4 Bandung</strong> – Vocational in Software Engineering (2017 – 2019)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Featured Projects</h2>
+    <ul>
+      <li><strong>hrzero-backend</strong> – RESTful backend for HR apps with salary/tax logic</li>
+      <li><strong>faceing-mobile</strong> – Flutter + GetX facial recognition attendance app</li>
+      <li><strong>gis-processor</strong> – Node.js backend for SHP file parsing and mapping</li>
+      <li><strong>bank-queue-sync</strong> – Local/cloud queue system backend</li>
+    </ul>
+  </section>
+
+  <div class="footer">
+    &copy; 2025 Adrian Hadi Permana
+  </div>
 </body>
 </html>
